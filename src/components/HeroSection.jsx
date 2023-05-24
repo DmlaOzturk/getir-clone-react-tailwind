@@ -14,12 +14,15 @@ export default function HeroSection() {
         TR: "+90"
     }
     const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
+        dots: false,
+        infinite: true,
         arrows: false,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        autoplay:true,
+        speed:500,
+        autoplaySpeed:3500,
+        cssEase:"linear"
     };
 
     return (
