@@ -1,11 +1,84 @@
+import Menu from "./ui/Menu";
+
+
 export default function Footer() {
+
+    const menus = [
+        {
+            title: "Getir'i keşfedin",
+            items: [
+                {
+                    title: "Hakkımızda",
+                },
+                {
+                    title: "Kariyer",
+                },
+                {
+                    title: "Teknoloji Kariyeri",
+                },
+                {
+                    title: "İletişim",
+                },
+                {
+                    title: "Sosyal Sorumluluk Projeleri",
+                }
+
+            ]
+        },
+        {
+            title: "Yardıma mı ihtiyacınız var?",
+            items: [
+                {
+                    title: "Sıkça Sorulan Sorular",
+
+                },
+                {
+                    title: "Kişisel Verilerin Korunması",
+                },
+                {
+                    title: "Gizlilik Politikası",
+                },
+                {
+                    title: "Kullanım Koşulları",
+                },
+                {
+                    title: "Çerez Politikası",
+                },
+                {
+                    title: "İşlem Rehberi"
+                }
+            ]
+        },
+        {
+            title: "İş Ortağımız Olun",
+            items: [
+                {
+                    title: "Bayimiz Olun",
+                },
+                {
+                    title: "Deponuzu Kiralayın",
+                },
+                {
+                    title: "GetirYemek Restoranı Olun",
+                },
+                {
+                    title: "GetirÇarşı İşletmesi Olun",
+                },
+                {
+                    title: "Zincir Restoranlar",
+                }
+
+            ]
+        }
+    ]
+
     return (
-        <div className="bg-white">
+        <div className="bg-white" >
             <div className="container mx-auto">
                 <div className="grid grid-cols-4 pt-10" >
                     <section className="flex flex-col gap-4">
                         <h6 className="text-primary-brand-color">Getir'i indirin!</h6>
-                        <nav className="flex flex-col gap-5">
+                        <nav className="flex flex-col gap-y-4">
                             <a href="/#">
                                 <img src="https://getir.com/_next/static/images/appstore-tr-141ed939fceebdcee96af608fa293b31.svg" alt="" />
                             </a>
@@ -17,30 +90,11 @@ export default function Footer() {
                             </a>
                         </nav>
                     </section>
-                    <section>
-                        <h6 className="text-primary-brand-color">Getir'i keşfedin</h6>
-                        <nav className="flex flex-col gap-3">
-                            <a href="/#">
-                                <h6>Hakkımızda</h6>
-                            </a>
-                            <a href="/#">
-                                <h6>Kariyer</h6>
-                            </a>
-                            <a href="/#">
-                                <h6>Teknoloji Kariyeri</h6>
-                            </a>
-                            <a href="/#">
-                                <h6>İletişim</h6>
-                            </a>
-                            <a href="/#">
-                                <h6>Sosyal Sorumluluk Projeleri</h6>
-                            </a>
-                        </nav>
-                    </section>
-                    <section>Yardıma mı ihtiyacınız var?</section>
-                    <section>İş Ortağımız Olun</section>
+
+                    {menus.map((menu, index) => <Menu key={index} {...menu}></Menu>)}
+
                 </ div>
             </div >
-        </div>
-    );
+        </div >
+    )
 }
